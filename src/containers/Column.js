@@ -21,13 +21,13 @@ class Column extends React.Component{
 
     handleClick() {
         let {board} = this.props;
-        var i ;
+        let i ;
 
         let currRow = 0;
         let currCol = 0;
 
-        var passColor = "red";
-
+        let passColor = "red";
+        // find empty row in this column and update currPlayer as well as board marking this row,col as either 'Y' or 'R'
         for (i = board.length-1; i >= 0;i--) {
             if (board[i][this.props.currentIndex] === 'E') {
                 let color = this.props.currPlayer === "red" ? "R": "Y";
@@ -40,6 +40,7 @@ class Column extends React.Component{
             }
         }
 
+        //find the square that matches this row and col and pass its color as props
         let newSquares =this.state.squares.map((square) => {
             let row = parseInt(square.key.slice(0,1));
             let col = parseInt(square.key.slice(2));
@@ -58,9 +59,8 @@ class Column extends React.Component{
 
     renderSquares() {
 
-        var i;
-        //[Square,Square,Square]
-        var allSquares = this.state.squares;
+        let i;
+        let allSquares = this.state.squares;
         for (i = 0; 6 > i; i++) {
             let column = this.props.currentIndex;
             let keyVal = column + "-" + i;

@@ -42,10 +42,8 @@ class App extends React.Component {
 
   renderColumns() {
     var i;
-    //[Square,Square,Square]
     var allColumns =[];
     for (i = 0; 7 > i; i++) {
-      //key = 0-0
       allColumns.push(<Column key={i} currentIndex={i} currPlayer={this.state.currColor}
         update={this.colorChanged}
       board={this.state.board}/>);
@@ -55,7 +53,7 @@ class App extends React.Component {
 
   render() {
     return (
-        <div className="App">
+        <div className="game-container">
 
           {this.renderColumns()}
         </div>
